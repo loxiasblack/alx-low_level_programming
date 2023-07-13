@@ -1,4 +1,7 @@
 #include <stdio.h>
+/*
+ *printing the strint with puts function
+ */
 
 int main()
 {
