@@ -1,7 +1,6 @@
 #include <stdio.h>
-/* using puts function to write a string */
-int main(void)
+int main(void)  /* using puts function to write a string */
 {
 	puts("\"Programming is like building a multilingual puzzle");
-	return() 0;
+	return (0);
 }
