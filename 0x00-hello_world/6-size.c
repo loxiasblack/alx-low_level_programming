@@ -1,4 +1,9 @@
 #include <stdio.h>
+/**
+ * main - Entry point
+ * Description: 'creat a program that size data type'
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	/*main function that size data type*/
