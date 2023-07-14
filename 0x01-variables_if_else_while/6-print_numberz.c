@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-char str[] = "0123456789";
+unsigned char str[] = "0123456789";
 int i = 0;
 
 for (i = 0 ; i < 11 ; i++)
