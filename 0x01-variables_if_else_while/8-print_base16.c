@@ -10,15 +10,13 @@ int i;
 int j;
 char str[] = "abcdefghijklmnopqrstuvwxyz";
 
-while (i < 10)
+for (i = 0; i < 10; i++)
 {
 	putchar('0' + i);
-	i++;
 }
-while (j < 6)
+for (j = 0; j < 6; j++)
 {
 	putchar(str[j]);
-	j++;
 }
 putchar('\n');
 return (0);
