@@ -1,20 +1,19 @@
 #include <stdio.h>
 /**
  * main - Entry point
- * Description: 'print all digit number with commas'
+ * Description: 'print all digit with for  number with commas'
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int i = 0;
+	int i;
 	int j;
 
-	while (i <= 99)
+	for (i = 0; i <= 99; i++)
 	{
-		j = i;
-		while (j <= 99)
+		for (j = i; j <= 99; j++)
 		{
-			if (j != i)
+			if (i != j)
 			{
 				putchar('0' + (i / 10));
 				putchar('0' + (i % 10));
@@ -27,9 +26,7 @@ int main(void)
 					putchar(' ');
 				}
 			}
-			j++;
 		}
-		i++;
 	}
 	putchar('\n');
 	return (0);
