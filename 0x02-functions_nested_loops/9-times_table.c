@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * times_tables - Entry point
+ * times_table - Entry point
  * Description: 'print matrice that i*j each line'
  * Return: Always 0.
  */
