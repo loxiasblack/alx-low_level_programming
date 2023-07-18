@@ -6,7 +6,7 @@
  */
 int print_alphabet(void)
 {
-	char alph[] = "abcdefghijklmnopqrstuvzxyz";
+	char alph[] = "abcdefghijklmnopqrstuvzwxyz";
 	int i;
 
 	i = 0;
