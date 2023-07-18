@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h>
+#include "main.h"
 /**
  * main - Entry point
  * Description: 'print _putchar'
@@ -14,7 +13,7 @@ int main(void)
 	i = 0;
 	while (i < 8)
 	{
-		putchar(string[i]);
+		_putchar(string[i]);
 		i++;
 	}
 	putchar('\n');
