@@ -9,37 +9,38 @@ void print_times_table(int n)
 	int i = 0;
 	int j;
 
-	while (i <= n)
+	if (n >= 0 && n <= 15)
 	{
-		j = 0;
-
-		while (j <= n)
+		while (i <= n)
 		{
-			int k = i * j;
+			j = 0;
 
-			if (j == 0)
+			while (j <= n)
 			{
-				printf("%d", k);
+				int k = i * j;
+
+				if (j == 0)
+				{
+					printf(",%d", k);
+				}
+				if (k <= 9 && j != 0)
+				{
+					printf(",   %d", k);
+				}
+				if (k > 9 && k <= 99)
+				{
+					printf(",  %d", k);
+				}
+				else if (k > 99)
+				{
+					printf(", %d", k);
+				}
+				j++;
 			}
-			if (k <= 9 && j != 0)
-			{
-				printf(",   %d", k);
-			}
-			if (k >= 10 && k <= 99)
-			{
-				printf(",  %d", k);
-			}
-			if (k > 99 && k <= 999)
-			{
-				printf(", %d", k);
-			}
-			else if (k >= 1000)
-			{
-				printf(",%d", k);
-			}
-			j++;
+			putchar('\n');
+			i++;
 		}
-		putchar('\n');
-		i++;
 	}
 }
+
+
