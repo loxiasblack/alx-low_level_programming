@@ -21,7 +21,7 @@ void print_times_table(int n)
 
 				if (j == 0)
 				{
-					printf(",%d", k);
+					printf("%d", k);
 				}
 				if (k <= 9 && j != 0)
 				{
