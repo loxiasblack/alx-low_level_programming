@@ -6,16 +6,17 @@
 int main(void)
 {
 	int n = 50;
-	unsigned long f[n];
+	unsigned long f[50];
+    int i;
 
 	f[0] = 1;
 	f[1] = 2;
 
-	for (int i = 2; i < n; i++)
+	for (i = 2; i < n; i++)
 	{
 		f[i] = f[i - 1] + f[i - 2];
 	}
-	for (int i = 0; i < n - 1; i++)
+	for (i = 0; i < n - 1; i++)
 	{
 		printf("%lu, ", f[i]);
 	}
