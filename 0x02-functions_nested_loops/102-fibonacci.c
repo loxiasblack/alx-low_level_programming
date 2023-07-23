@@ -7,7 +7,7 @@ int main(void)
 {
 	int n = 50;
 	unsigned long f[50];
-    int i;
+	int i;
 
 	f[0] = 1;
 	f[1] = 2;
