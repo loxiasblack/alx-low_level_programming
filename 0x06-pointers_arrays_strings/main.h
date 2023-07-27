@@ -1,6 +1,7 @@
 #pragma once
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 char *_strcat(char *dest, char *src);
 char *_strncat(char *dest, char *src, int n);
@@ -13,3 +14,4 @@ char *leet(char *str);
 char *rot13(char *str);
 int _putchar(char c);
 void print_number(int n);
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
