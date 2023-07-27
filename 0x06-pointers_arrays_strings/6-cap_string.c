@@ -24,7 +24,8 @@ char *cap_string(char *str)
 			{
 				str[i] -= 32;
 			}
-			if (i > 0 && (str[i - 1] == '\t' || str[i - 1] == '\''))
+			if (i > 0 && (str[i - 1] == '\t' || str[i - 1] == '\'' ||
+			str[i - 1] == '\\'))
 			{
 				str[i] -= 32;
 			}
