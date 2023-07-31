@@ -8,6 +8,10 @@
 */
 char *_strpbrk(char *s, char *accept)
 {
+	if (s == NULL)
+	{
+		return (NULL);
+	}
 	while (*s)
 	{
 		if (*s != *accept)
@@ -19,6 +23,10 @@ char *_strpbrk(char *s, char *accept)
 			return (s);
 		}
 		s++;
+	}
+	if (*s == *accept)
+	{
+		return (s);
 	}
 	return (NULL);
 }
