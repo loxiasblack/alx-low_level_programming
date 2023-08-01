@@ -8,25 +8,25 @@
 */
 char *_strpbrk(char *s, char *accept)
 {
+	char *current_accept;
+
 	if ((s == NULL) || (accept == NULL))
 	{
 		return (NULL);
 	}
 	while (*s)
 	{
-		if (*s != *accept)
+		current_accept = accept;
+
+		while (*current_accept)
 		{
-			accept++;
-		}
-		if (*s == *accept)
-		{
-			return (s);
+			if (*current_accept == *s)
+			{
+				return (s);
+			}
+			current_accept++;
 		}
 		s++;
 	}
-	if (*s != *accept)
-	{
-		return (NULL);
-	}
-	return (0);
+	return (NULL);
 }
