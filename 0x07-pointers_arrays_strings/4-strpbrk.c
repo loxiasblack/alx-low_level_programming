@@ -8,7 +8,7 @@
 */
 char *_strpbrk(char *s, char *accept)
 {
-	if (s == NULL)
+	if ((s == NULL) || (accept == NULL))
 	{
 		return (NULL);
 	}
