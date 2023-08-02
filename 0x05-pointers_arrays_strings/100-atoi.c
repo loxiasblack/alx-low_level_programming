@@ -10,22 +10,23 @@ int _atoi(char *s)
 	int sign = 1;
 	int i = 0;
 
-	while (s[i] == ' ')
-	{
-		i++;
-	}
-	while (s[i] == '-' || s[i] == '+')
+	while (s[i] == '-' || s[i] == '+' || s[i] == ' ')
 	{
 		if (s[i] == '-')
 		{
 			sign = -sign;
 			i++;
 		}
-		else
+		if (s[i] == '+') 
 		{
 			sign = sign;
 			i++;
 		}
+        if (s[i] == ' ')
+        {
+            i++;
+        }
+        
 	}
 	for (; s[i] != '\0'; i++)
 	{
