@@ -1,45 +1,40 @@
 #include "main.h"
-/**
- * _sqrt_recursion - function
- * @n: parametre
- * @x: parametre
- * Return : the square
- * Return: the recup
-*/
-int recup(int x, int n);
+
+int recup(int p, int n);
 int _sqrt_recursion(int n)
 {
-	if (n == 0 || n == 1)
-	{
-		return (n);
-	}
-	if (n < 0)
-	{
-		return (-1);
-	}
-	else
-	{
-		return (recup(0, n));
-	}
+    if (n < 0)
+    {
+        return (-1);
+    }
+    if (n == 1)
+    {
+        return (1);
+    }
+    if (n > 2)
+    {
+        return (recup(0, n));
+    }
+    else
+        return (0);
+        
 }
-/**
- * recup - returns the natural square root of a number
- * @n: number
- * @x:parametre
- * Return: the natural square root of n, -1 if none
- */
-int recup(int x, int n)
+
+int recup(int p, int n)
 {
-	if (x * x > n)
-	{
-		return (-1);
-	}
-	if (x * x == n)
-	{
-		return (x);
-	}
-	else
-	{
-		return (recup(x + 1, n));
-	}
+    if (p * p > n)
+    {
+        return (-1);
+    }
+    if (p * p == n)
+    {
+        return (p);
+    }
+    if (p * p < n)
+    {
+        return (recup(p+1, n));
+    }
+    else
+        return 0;
+    
 }
