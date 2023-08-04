@@ -17,16 +17,15 @@ int _atoi(char *s)
 			sign = -sign;
 			i++;
 		}
-		if (s[i] == '+') 
+		if (s[i] == '+')
 		{
 			sign = sign;
 			i++;
 		}
-        if (s[i] == ' ')
-        {
-            i++;
-        }
-        
+		if (s[i] == ' ')
+		{
+			i++;
+		}
 	}
 	for (; s[i] != '\0'; i++)
 	{
