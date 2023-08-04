@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	int i = 1;
 	int mult = 1;
 
-	if (argc > 1)
+	if (argc >= 1)
 	{
 		while (i < argc)
 		{
@@ -24,5 +24,5 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 	}
-	return (1);
+	return (0);
 }
