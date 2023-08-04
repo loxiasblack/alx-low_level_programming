@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 /**
  * main - function that add numbers
@@ -15,7 +16,7 @@ int main(int argc, char *argv[])
 	{
 		while (i < argc)
 		{
-			if (atoi(argv[i]) == 0)
+			if (atoi(argv[i]) == 0 && strcmp(argv[i], "0") != 0)
 			{
 				printf("Error\n");
 				return (1);
