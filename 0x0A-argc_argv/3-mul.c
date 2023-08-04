@@ -8,22 +8,14 @@
 */
 int main(int argc, char *argv[])
 {
-	int i = 1;
-	int mult = 1;
-
-	if (argc >= 1)
-	{
-		while (i < argc)
-		{
-			mult = mult * atoi(argv[i]);
-			i++;
-		}
-		printf("%d\n", mult);
-		return (0);
-	}
-	else
+	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
+	}
+	else
+	{
+		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+		return (0);
 	}
 }
