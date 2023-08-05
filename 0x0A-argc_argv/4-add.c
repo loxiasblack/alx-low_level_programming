@@ -1,38 +1,41 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
- * main - function that add numbers
- * @argc: the number of argument
- * @argv: the pointer of array
+ * main - function that print the sum of argument if it's
+ * digit
+ * @argc: number of argument
+ * @argv: character
  * Return: 0 or 1
 */
 int main(int argc, char *argv[])
 {
-	int i = 1;
-	int add = 0;
+	int i, j, sum, len;
+	char *ptr;
 
-	if (argc > 1)
+	sum = 0;
+	if (argc < 2)
 	{
-		while (i < argc)
-		{
-			if (atoi(argv[i]) == 0 && strcmp(argv[i], "0") != 0)
-			{
-				printf("Error\n");
-				return (1);
-			}
-			else
-			{
-				add += atoi(argv[i]);
-			}
-			i++;
-		}
-		printf("%d\n", add);
-		return (0);
+		printf("0\n");
 	}
 	else
 	{
-		printf("0\n");
-		return (0);
+		for (i = 1; i < argc; i++)
+		{
+			ptr = argv[i];
+			len = strlen(ptr);
+			for (j = 0; j < len; j++)
+			{
+				if (isdigit(*(ptr + j)) == 0)
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
+			sum += atoi(argv[i]);
+		}
+		printf("%d\n", sum);
 	}
+	return (0);
 }
