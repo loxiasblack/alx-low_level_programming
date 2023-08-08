@@ -2,19 +2,21 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * alloc_grid - function that creat an array of 2 dim
- * @width: the number of colomn
- * @height: the number of row
+ * alloc_grid - function that return an array
+ * @width: the size of row
+ * @height: the size of colomn
  * Return: grid success
 */
 int **alloc_grid(int width, int height)
 {
-	int i, j, k;
 	int **grid;
+	int i;
+	int j;
+	int k;
 
 	grid = malloc(sizeof(*grid) * height);
 
-	if (grid == NULL || height <= 0 || width <= 0)
+	if (grid == NULL || width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
@@ -26,7 +28,7 @@ int **alloc_grid(int width, int height)
 		{
 			for (k = 0; k < i; k++)
 			{
-				free(grid[i]);
+				free(grid[k]);
 			}
 			free(grid);
 			return (NULL);
