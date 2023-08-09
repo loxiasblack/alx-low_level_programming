@@ -52,7 +52,6 @@ char **strtow(char *str)
 			s[i][k] = *str;
 			str++;
 		}
-		s[i][k] = '\0';
 		i++;
 	}
 	
