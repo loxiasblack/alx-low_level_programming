@@ -30,7 +30,7 @@ char **strtow(char *str)
 		if (str[i] == ' ')
 			space++;
 	}
-	word_count = space + 1;
+	word_count = space;
 	s = malloc(sizeof(*s) * (word_count + 1));
 	if (!s)
 		return (NULL);
