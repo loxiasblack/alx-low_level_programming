@@ -22,7 +22,7 @@ char **strtow(char *str)
 			space++;
 	}
 	word_count = space + 1;
-	s = malloc(sizeof(*s) * (word_count));
+	s = malloc(sizeof(*s) * (word_count + 1));
 	if (!s)
 		return (NULL);
 	i = 0;
