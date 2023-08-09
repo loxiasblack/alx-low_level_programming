@@ -14,15 +14,6 @@ char **strtow(char *str)
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-	while (*str != ' ')
-	{
-		str++;
-	}
-	if (*str == '\0')
-	{
-		return (NULL);
-	}
-   
     
 	space = 0;
 	for (i = 0; str[i] != '\0'; i++)
@@ -30,7 +21,7 @@ char **strtow(char *str)
 		if (str[i] == ' ')
 			space++;
 	}
-	word_count = space;
+	word_count = space + 1;
 	s = malloc(sizeof(*s) * (word_count + 1));
 	if (!s)
 		return (NULL);
