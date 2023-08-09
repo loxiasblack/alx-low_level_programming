@@ -12,26 +12,18 @@ char **strtow(char *str)
 	int i, j, k, space, word_count;
 	char **s;
 
-	if (str == NULL || *str == '\0')
-	{
+	if (str == NULL || *str == '\0' || (str[0] == ' ' && str[1] == '\0'))
 		return (NULL);
-	}
 	space = 0;
-
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
-		{
 			space++;
-		}
 	}
 	word_count = space + 1;
 	s = malloc(sizeof(*s) * (word_count + 1));
-
 	if (!s)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (*str != '\0')
 	{
