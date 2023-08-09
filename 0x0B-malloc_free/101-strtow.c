@@ -22,7 +22,7 @@ char **strtow(char *str)
 			space++;
 	}
 	word_count = space + 1;
-	s = malloc(sizeof(*s) * (word_count + 1));
+	s = malloc(sizeof(*s) * (word_count));
 	if (!s)
 		return (NULL);
 	i = 0;
@@ -52,8 +52,9 @@ char **strtow(char *str)
 			s[i][k] = *str;
 			str++;
 		}
+        s[i][k] = '\0';
 		i++;
 	}
-	
+	s[i] = NULL;
 	return (s);
 }
