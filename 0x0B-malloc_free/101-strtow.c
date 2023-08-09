@@ -12,8 +12,18 @@ char **strtow(char *str)
 	int i, j, k, space, word_count;
 	char **s;
 
-	if (str == NULL || *str == '\0' || (str[0] == ' ' && str[strlen(str)] == '\0'))
+	if (str == NULL || *str == '\0')
 		return (NULL);
+	while (*str != ' ')
+	{
+		str++;
+	}
+	if (*str == '\0')
+	{
+		return (NULL);
+	}
+   
+    
 	space = 0;
 	for (i = 0; str[i] != '\0'; i++)
 	{
