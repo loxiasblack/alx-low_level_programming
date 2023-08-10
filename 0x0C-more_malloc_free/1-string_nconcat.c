@@ -20,6 +20,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s2 = "";
 	}
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
 	lens1 = strlen(s1);
 	str = malloc((sizeof(*str) * (n + 1)) + lens1);
 	if (str == NULL)
