@@ -7,15 +7,14 @@
  * @b: the variable to allocate size
  * Return: n
 */
+
 void *malloc_checked(unsigned int b)
 {
-	int *n;
+	void *n = malloc(b);
 
-	n = malloc(sizeof(*n) * b);
 	if (n == NULL)
 	{
 		exit(98);
 	}
-    
 	return (n);
 }
