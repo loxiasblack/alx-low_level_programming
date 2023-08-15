@@ -1,9 +1,8 @@
-#include "dog.h"
 #include <stdlib.h>
+#include "dog.h"
 /**
- * free_dog - function that free the memory allocated
- * @d: the strcut dog created
- * Return: nothing
+ * free_dog - function that free the memory adress
+ * @d: variable of type struct dog
 */
 void free_dog(dog_t *d)
 {
