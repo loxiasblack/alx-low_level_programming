@@ -11,5 +11,7 @@ void print_name(char *name, void (*f)(char *))
 	void (*fun_ptr)(char *);
 
 	fun_ptr = f;
+	if (name == NULL)
+		return;
 	fun_ptr(name);
 }
