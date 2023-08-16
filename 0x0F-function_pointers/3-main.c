@@ -24,14 +24,14 @@ int main(int argc, char **argv)
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 	op = argv[2];
-	if (op[1] != '\0' || !(get_op_func(op)))
+	if (!(get_op_func(op)))
 	{
 		printf("Error\n");
 		exit(99);
 	}
 	if (num2 == 0 && (*op == '/' || *op == '%'))
 	{
-		printf("Eroor\n");
+		printf("Error\n");
 		exit(100);
 	}
 	result = get_op_func(op)(num1, num2);
