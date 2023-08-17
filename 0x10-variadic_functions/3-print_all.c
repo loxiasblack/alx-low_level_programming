@@ -2,7 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "variadic_functions.h"
-
+/**
+ * print_all - function that print any type of variable
+ * @format: the type of format
+*/
 void print_all(const char * const format, ...)
 {
 	va_list args;
