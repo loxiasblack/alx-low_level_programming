@@ -3,29 +3,28 @@
 #include <string.h>
 #include "lists.h"
 /**
- * add_node - function that add a node to
- * the linked list
- * @head: the adresse the first node in th
- * single list
- * @str: the string to add the singly linked
- * list
- * Return: the head of linked list
+ * add_node - function that add node who the head
+ * point to
+ * @head: head of the linked list
+ * @str: string
+ * Return: the new_node add to the linked list
 */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *node;
+	list_t *new_node;
 
-	node = malloc(sizeof(list_t));
-	if (node == NULL)
+	new_node = malloc(sizeof(list_t));
+	if (new_node == NULL)
 	{
 		return (NULL);
 	}
-	node->str = strdup(str);
-	node->len = strlen(str);
-	node->next = *head;
+	new_node->len = strlen(str);
+	new_node->str = strdup(str);
+	new_node->next = *head;
 	if (*head == NULL)
-		*head = node;
-	else
-		*head = node;
-	return (node);
+	{
+		*head = new_node;
+	}
+	*head = new_node;
+	return (new_node);
 }
