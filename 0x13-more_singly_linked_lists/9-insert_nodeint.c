@@ -35,6 +35,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			}
 			count++;
 		}
+		if (tmp->next == NULL && (count < (idx - 2)))
+			return (NULL);
 	}
 	return (node);
 }
