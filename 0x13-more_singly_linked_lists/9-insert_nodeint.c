@@ -9,14 +9,18 @@
  * @n: the data of the node
  * Return: linked list
 */
+size_t listint_len(const listint_t *h);
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	unsigned int count = 0;
 	listint_t *node, *tmp;
 
 	node = malloc(sizeof(listint_t));
-	if (node == NULL)
+	if (node == NULL || idx > listint_len(*head))
+	{
+		free(node);	
 		return (NULL);
+	}
 	if (idx == 0)
 	{
 		node->n = n;
@@ -47,4 +51,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	tmp->next = node;
 	return (node);	
+}
+
+size_t listint_len(const listint_t *h)
+{
+	size_t len = 0;
+
+	while (h)
+	{
+		len++;
+		h = h->next;
+	}
+	return (len);
 }
