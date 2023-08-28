@@ -27,13 +27,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		tmp = *head;
 		while (tmp->next != NULL)
 		{
+			count++;
 			tmp = tmp->next;
-			if (count == (idx - 2))
+			if (count == (idx - 1))
 			{
 				node->next = tmp->next;
 				tmp->next = node;
 			}
-			count++;
 		}
 		if (tmp->next == NULL && (count < (idx - 2)))
 			return (NULL);
