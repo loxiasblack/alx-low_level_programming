@@ -24,27 +24,19 @@ int _pow_recursion(int x, int y)
 */
 unsigned int binary_to_uint(const char *b)
 {
-	int  place = 0, i;
-	unsigned int decimal = 0, rem = 0;
-	int num;
+	int i = 0, len = 0;
+	unsigned int decimal = 0;
 
 	if (b == NULL)
 		return (0);
-	for (i = 0; b[i] != '\0'; i++)
+	while (b[len])
+		len++;
+	while (b[i])
 	{
 		if (b[i] != '0' && b[i] != '1')
 			return (0);
-	}
-	num = atoi(b);
-	while (num)
-	{
-		rem = num % 10;
-		if (rem)
-		{
-			decimal = decimal + (_pow_recursion(2, place));
-		}
-		num = num / 10;
-		place++;
+		decimal += (b[i] - '0') * (_pow_recursion(2, len - 1 - i));
+		i++;
 	}
 	return (decimal);
 }
