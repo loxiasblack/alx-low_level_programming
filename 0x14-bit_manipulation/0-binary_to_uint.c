@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #include <stdlib.h>
 #include "main.h"
 /**
@@ -25,12 +24,17 @@ int _pow_recursion(int x, int y)
 */
 unsigned int binary_to_uint(const char *b)
 {
-	int  place = 0;
+	int  place = 0, i;
 	unsigned int decimal = 0, rem = 0;
 	int num;
 
 	if (b == NULL)
 		return (0);
+	for (i = 0; b[i] != '\0'; i++)
+	{
+		if (b[i] != '0' && b[i] != '1')
+			return (0);
+	}
 	num = atoi(b);
 	while (num)
 	{
