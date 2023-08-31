@@ -22,29 +22,7 @@ int _pow_recursion(int x, int y)
 */
 void print_binary(unsigned long int n)
 {
-	long int j = n;
-	long int k = n;
-	int place = 10;
-
-	if (j == 0)
-	{
-		_putchar('0');
-		return;
-	}
-	while (place >= 0)
-	{
-		if (k >= _pow_recursion(2, place))
-		{
-			if (j == _pow_recursion(2, place) || j >= _pow_recursion(2, place))
-			{
-				_putchar('1');
-				j -= _pow_recursion(2, place);
-			}
-			else if (j < _pow_recursion(2, place))
-			{
-				_putchar('0');
-			}
-		}
-		place--;
-	}
+	if (n > 1)
+		print_binary(n >> 1);
+	_putchar((n & 1) + '0');
 }
