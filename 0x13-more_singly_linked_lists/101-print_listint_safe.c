@@ -14,7 +14,10 @@ size_t print_listint_safe(const listint_t *head)
 	size_t count = 0;
 
 	if (head == NULL)
+	{
+		return (count);
 		exit(98);
+	}
 	while (fast && fast->next)
 	{
 		count++;
