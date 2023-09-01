@@ -32,8 +32,7 @@ size_t print_listint_safe(const listint_t *head)
 				fast = fast->next;
 			}
 			printf("-> [%p] %d\n", (void *)fast, fast->n);
-			printf("%ld\n", count);
-			exit(98);
+			exit(count);
 		}
 	}
 	while (slow)
