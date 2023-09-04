@@ -3,17 +3,20 @@
 #include <stdlib.h>
 #include <fcntl.h>
 /**
- * read_textfile - function that read and write
- * from a file to th POSIX
- * @filename: the file desired
- * @letters: len of charcter
- * Return: value of r or 0
+* read_textfile - function that read and write
+* from a file to th POSIX
+* @filename: the file desired
+* @letters: len of charcter
+* Return: value of r or 0
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer;
+
 	int o, r, w;
 
+	if (filename == NULL)
+		return (0);
 	o = open(filename, O_RDONLY);
 	if (o == -1)
 		return (0);
