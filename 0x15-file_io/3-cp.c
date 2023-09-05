@@ -14,6 +14,7 @@
 int main(int argc, char **argv)
 {
 	int file_to, file_from, r;
+
 	char buff[1024];
 
 	if (argc != 3)
@@ -52,5 +53,10 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", file_from);
 		exit(100);
 	}
-	return (0);
+	if (file_to)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", file_to),
+		exit(100);
+	}
+	return (EXIT_SUCCESS);
 }
