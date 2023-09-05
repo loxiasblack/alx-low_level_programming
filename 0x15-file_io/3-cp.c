@@ -55,8 +55,7 @@ int main(int argc, char **argv)
 	}
 	if (file_to)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", file_to),
-		exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", file_to), exit(100);
 	}
 	return (EXIT_SUCCESS);
 }
