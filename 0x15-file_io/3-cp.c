@@ -39,11 +39,15 @@ int main(int argc, char **argv)
 		if (write(file_to, buff, r) != r)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+            close(file_from);
+            close(file_to);
 			exit(99);
 		}
 	if (r == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file%s\n", argv[1]);
+        close(file_from);
+        close(file_to);
 		exit(98);
 	}
 	file_to = close(file_to);
@@ -54,8 +58,6 @@ int main(int argc, char **argv)
 		exit(100);
 	}
 	if (file_to)
-	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", file_to), exit(100);
-	}
 	return (EXIT_SUCCESS);
 }
