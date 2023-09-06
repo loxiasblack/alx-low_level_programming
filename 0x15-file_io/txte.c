@@ -1,34 +1,24 @@
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
-#include <string.h>
-#include <fcntl.h>
+#include "main.h"
 
-int main(void)
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(int ac, char **av)
 {
-	int fd, w, r;
-	char *buffer;
+    ssize_t n;
 
-	fd = open("txte.c", O_RDONLY);
-	if (fd == -1)
-	{
-		printf("the file doesn't open\n");
-		return (-1);
-	}
-	printf("file open successfuly\n");
-	printf("%d\n", fd);
-	
-	
-	buffer = malloc(strlen("Hello les guys\n") + 1);
-	if (buffer == NULL)
-	{
-		close(fd);
-		return (-1);
-	}
-	r = read(fd, buffer, 16);
-	buffer[r] = '\0';
-	printf("this what i write in my opened file:\n%s\n", buffer);
-	free(buffer);
-	close(fd);
-	return (0);
+    if (ac != 2)
+    {
+        dprintf(2, "Usage: %s filename\n", av[0]);
+        exit(1);
+    }
+    n = read_textfile(av[1], 114);
+    printf("\n(printed chars: %li)\n", n);
+    n = read_textfile(av[1], 1024);
+    printf("\n(printed chars: %li)\n", n);
+    return (0);
 }
