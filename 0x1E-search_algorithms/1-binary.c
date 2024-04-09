@@ -39,9 +39,9 @@ int binary_search(int *array, size_t size, int value)
 		else
 			return (mid);
 	}
-	printf("Searching in array: ");
 	while (i <= last)
 	{
+		printf("Searching in array: ");
 		if (i != last)
 			printf("%d, ", array[i]);
 		else
